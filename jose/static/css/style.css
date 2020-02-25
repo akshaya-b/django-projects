@@ -1,0 +1,17 @@
+h1{
+font-family: 'Courgette', cursive;
+text-align: center;
+color: #d96f18;
+ background: #f0de86;
+  font-size: 2.8em;
+}
+p{
+font-family: 'Courgette', cursive;
+text-align: center;
+color: #d96f18;
+  font-size: 2.8em;
+ background: #e2f59f;
+}
+table,th,td{
+border: 2px solid black
+}

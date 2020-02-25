@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Annan Jose Valga</title>
+  <link rel="stylesheet" href="{% static "css/style.css" %}" />
+</head>
+<body>
+<h1>Quizo</h1>
+<div class="django" align="center">
+<img src= "{% static 'images/vada.jpg' %}" alt="something went wrong"><br>
+<p>how to split this vada equally to these guys<br>
+{{ one }}
+{{two}}
+{{three}}
+</p>
+</div>
+<h1>Level 2 Django</h1>
+<div class="django serious">
+{% if access_record %}
+<table>
+<thead>
+<th>Site Name</th>
+<th>Date</th>
+</thead>
+{% for acc in access_record%}
+<tr>
+<td>{{acc.name}}</td>
+<td>{{acc.date}}</td>
+</tr>
+{% endfor %}
+</table>
+{%else%}
+<p>NO ACCESS RECORDSFOUND!</p>
+{% endif %}
+</div>
+</body>
+</html>
