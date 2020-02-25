@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container mt-3">
+  <h1>Weather Now</h1>
+
+<form  method="post">
+  <div class="input-group mb-3">
+    {% csrf_token %}
+    {{form.name}}
+    <div class="input-group-append">
+
+      <button class="btn btn-success" type="submit">Go</button>
+
+     </div>
+  </div>
+
+  {%if message %}
+  <div class="alert alert-{{message_class}}">
+    {{message }}
+
+  </div>
+  {% endif %}
+</form>
+   </div>
+   {% for city_weather in weather_data %}
+ </div>
+
+   <div class="container">
+     <div class="jumbotron">
+       <h1>{{city_weather.city}}</h1>
+       <img src="http://openweathermap.org/img/w/{{city_weather.icon}}.png" alt="">
+       <p>Temperature: {{city_weather.temperature}}</p>
+       <p>Description: {{city_weather.description}}</p>
+       <div class="media-left">
+       <a href='{% url 'delete_city' city_weather.city %}'>
+       <button type="button" class="btn btn-danger">Delete</button></a>
+      </div>
+    </div>
+     {% endfor %}
+
+
+</body>
+</html>
