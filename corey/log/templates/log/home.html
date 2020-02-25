@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{message.tag}}">
+  {{message}}
+
+</div>
+{% endfor %}
+{%endif%}
+<p>yoy are into the home page</p>
+
+<p>
+
+  My {{user.username}} lies over the ocean.
+
+  My {{user.username}} lies over the sea.
+
+  My {{user.username}} lies over the ocean.
+
+  Oh, bring back my {{user.username}} to me.
+
+</p>
+<a href="{% url 'logout'%}" class="btn btn-info" role="button">Sign out</a>
+</body>
+</html>
