@@ -1,0 +1,27 @@
+{% extends 'persian/base.html' %}
+{% block body_block %}
+
+<div class="jumbotron">
+  <h1>Family details</h1>
+
+</div>
+{% if fam %}
+
+
+    {% for mem in fam %}
+    <div class="container">
+      <ul>
+        <li><h3>girl baby: {{mem.girl}}</h3></li>
+        <li><h3>boy baby: {{mem.boy}}</h3></li>
+        <li><h3>husky baby: {{ mem.husky }}</h3></li>
+        <li><h3>Goldie baby: {{ mem.goldie }}</h3></li>
+      </ul>
+    </div>
+{% endfor %}
+
+
+{% endif %}
+
+
+
+{% endblock %}
