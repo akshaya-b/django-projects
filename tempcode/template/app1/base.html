@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+{% extends "app1/index.html" %}
+{% block body_block %}
+<h1>base</h1>
+<h2>inside base file</h2>
+<h3>{{ numeric|add:"100" }}</h3>
+<h3>{{ word|cut:"he" }}</h3>
+{%endblock%}
