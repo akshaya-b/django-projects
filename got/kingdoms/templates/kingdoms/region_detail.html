@@ -1,0 +1,25 @@
+{% extends "kingdoms/region_base.html" %}
+
+{% block body_block %}
+<div class="jumbotron">
+<h1>Welcome to region details</h1>
+    <h2>region details</h2>
+    <p>name: {{regiondetail.name}}</p>
+    <p>climate: {{regiondetail.climate}}</p>
+    </div>
+
+    {% for king in regiondetail.kingdom.all %}
+    <p>{{king.name}} is ruled by {{king.king}}.</p>
+    <p>the flag is {{king.flag }}</p>
+
+
+    {% endfor %}
+
+  </div>
+  <div class="container">
+      <p><a class="btn btn-warning" href="{% url 'kingdoms:update' pk=regiondetail.pk %}">update</a></p>
+      <p><a class="btn btn-danger" href="{% url 'kingdoms:delete' pk=regiondetail.pk %}">delete</a></p>
+
+
+      </div>
+{% endblock %}
