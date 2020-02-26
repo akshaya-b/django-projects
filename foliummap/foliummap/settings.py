@@ -78,8 +78,8 @@ DATABASES = {
     'default': {
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': 'mapapp',
-            'USER': 'postgres',
-            'PASSWORD': '1411',
+            'USER': '',
+            'PASSWORD': '',
             'HOST': 'localhost'
     }
 }
